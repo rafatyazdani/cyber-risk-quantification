@@ -2,23 +2,22 @@
 
 ## Overview
 
-This project models cybersecurity risk in financial terms using probabilistic simulation and scenario-based analysis. It translates technical cyber risk into **expected financial exposure and investment decision metrics**.
+This project models cybersecurity risk in financial terms using probabilistic simulation and scenario-based analysis. It translates technical cyber risk into expected financial exposure and investment decision metrics.
 
-The goal is to bridge the gap between cybersecurity operations and **capital allocation decision-making**.
+The goal is to bridge the gap between cybersecurity operations and capital allocation decision-making.
 
 ---
 
 ## Why This Matters
 
-Most cybersecurity programs measure:
+Most cybersecurity discussions focus on:
 - number of incidents
 - compliance posture
 - qualitative risk ratings
 
-This project reframes cyber risk as:
-> a financial distribution of potential losses
+This project reframes cyber risk as a financial distribution of potential losses under uncertainty
 
-allowing leadership to evaluate:
+This enables decision-making based on:
 - expected annual loss
 - tail risk exposure
 - ROI of security investments
@@ -27,73 +26,117 @@ allowing leadership to evaluate:
 
 ## Methodology
 
-The analysis is built on three components:
+The analysis is built on three core components:
 
 ### 1. Loss Modeling (FAIR-inspired)
 - Threat Event Frequency (TEF)
 - Loss Magnitude (LM)
-- Monte Carlo simulation
+- Monte Carlo simulation (10,000+ iterations)
 
 ### 2. Scenario Analysis
 Models multiple threat types:
 - Ransomware
-- Cloud Breach
+- Cloud Data Breach
 - AI Misuse
 
-Each scenario has distinct frequency and severity distributions.
+Each scenario has unique frequency and severity assumptions.
 
 ### 3. Control ROI Analysis
-Evaluates the financial impact of security controls:
-- Reduction in expected loss
-- ROI of investment
-- Sensitivity to control effectiveness
+Evaluates security investment impact by:
+- Reducing expected loss
+- Measuring financial benefit of controls
+- Calculating ROI
+- Performing sensitivity analysis
 
 ---
 
 ## Key Outputs
 
 ### Annualized Loss Exposure (ALE)
-- Median, 90th, 95th percentile losses
-- Full loss distribution via Monte Carlo simulation
+- Median loss
+- 90th percentile loss
+- 95th percentile (tail risk)
 
 ### Scenario Insights
 - Ransomware drives highest tail risk exposure
-- Cloud breaches exhibit lower frequency but higher severity
-- AI misuse shows higher variability in outcomes
+- Cloud breaches have lower frequency but higher severity
+- AI misuse shows higher variability
 
 ### Control Effectiveness
-- Risk reduction quantified in dollar terms
-- Example: ~$2.5M annual risk reduction observed
-- ROI approximately 1.5x under baseline assumptions
+- Example result: ~$2.5M annual risk reduction
+- Example ROI: ~1.5x under baseline assumptions
 
 ---
 
 ## Key Insight
 
-Cybersecurity investments should not be evaluated as cost centers.
+Cybersecurity should be evaluated as a financial risk problem, not just a technical control problem.
 
-They should be evaluated as:
-> financial risk reduction instruments
-
-This enables prioritization based on:
-- expected loss reduction
-- tail risk mitigation
-- capital efficiency (ROI)
+This means:
+- Risks are distributions, not single values
+- Controls should be evaluated by economic impact
+- Investment decisions should be based on expected value and ROI
 
 ---
 
-## Tools Used
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- Monte Carlo simulation
+## Architecture Overview
 
----
+```mermaid
+flowchart LR
+A[Scenario Inputs] --> B[Monte Carlo Engine]
+B --> C[Loss Distribution Modeling]
+C --> D[Financial Risk Outputs]
+D --> E[Control ROI Analysis]
+E --> F[Decision Insights]
 
-## Potential Applications
+## Components
+Scenario Inputs: TEF assumptions and loss distributions
+Monte Carlo Engine: Simulates thousands of possible outcomes
+Loss Distribution Modeling: Produces ALE and percentile outputs
+Financial Risk Outputs: Quantifies exposure (median, tail risk)
+Control ROI Analysis: Evaluates financial impact of controls
+Decision Insights: Converts outputs into investment decisions
 
-- Security investment prioritization
-- Board-level risk reporting
-- Cyber insurance modeling
-- Enterprise risk quantification frameworks
+notebooks/
+  01_fair_loss_model.ipynb
+  02_scenario_analysis.ipynb
+  03_control_roi_analysis.ipynb
+
+outputs/
+  (generated analysis files)
+
+README.md
+
+## How to Run This Project
+1. Clone repository
+git clone https://github.com/rafatyazdani/cyber-risk-quantification.git
+cd cyber-risk-quantification
+
+2. Create virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+3. Install dependencies
+pip install numpy pandas matplotlib jupyter
+
+4. Launch Jupyter
+jupyter notebook
+
+5. Run notebooks in order
+01_fair_loss_model.ipynb
+02_scenario_analysis.ipynb
+03_control_roi_analysis.ipynb
+
+## Executive Interpretation
+
+This model is designed to support risk-informed capital allocation decisions.
+
+Rather than treating cybersecurity as a compliance function, it:
+Quantifies uncertainty in financial terms
+Highlights tail-risk exposure
+Evaluates controls based on economic impact
+
+This enables leadership to:
+Compare security investments like financial assets
+Prioritize controls based on ROI
+Understand downside exposure in monetary terms
