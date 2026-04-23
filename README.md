@@ -89,7 +89,7 @@ C --> D[Financial Risk Outputs]
 D --> E[Control ROI Analysis]
 E --> F[Decision Insights]
 
-## Components
+Components
 Scenario Inputs: TEF assumptions and loss distributions
 Monte Carlo Engine: Simulates thousands of possible outcomes
 Loss Distribution Modeling: Produces ALE and percentile outputs
@@ -97,6 +97,7 @@ Financial Risk Outputs: Quantifies exposure (median, tail risk)
 Control ROI Analysis: Evaluates financial impact of controls
 Decision Insights: Converts outputs into investment decisions
 
+Project Structure
 notebooks/
   01_fair_loss_model.ipynb
   02_scenario_analysis.ipynb
@@ -107,7 +108,7 @@ outputs/
 
 README.md
 
-## How to Run This Project
+How to Run This Project
 1. Clone repository
 git clone https://github.com/rafatyazdani/cyber-risk-quantification.git
 cd cyber-risk-quantification
