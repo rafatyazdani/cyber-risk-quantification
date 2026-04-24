@@ -128,7 +128,7 @@ jupyter notebook
 02_scenario_analysis.ipynb
 03_control_roi_analysis.ipynb
 
-## Executive Interpretation
+Executive Interpretation
 
 This model is designed to support risk-informed capital allocation decisions.
 
