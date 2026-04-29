@@ -80,12 +80,12 @@ Cyber losses are not normally distributed. Small losses are common; catastrophic
 
 ```mermaid
 flowchart TD
-    A[Scenario Inputs\nTEF assumptions] --> B[Monte Carlo Engine\n10,000 simulations]
-    C[Loss Magnitude\nLognormal params] --> B
+    A["Scenario Inputs<br/>TEF assumptions"] --> B["Monte Carlo Engine<br/>10,000 simulations"]
+    C["Loss Magnitude<br/>Lognormal params"] --> B
     B --> D[Loss Distribution]
     D --> E[Median ALE]
-    D --> F[95th Percentile\nTail Risk]
-    D --> G[Control ROI\nAnalysis]
+    D --> F["95th Percentile<br/>Tail Risk"]
+    D --> G["Control ROI<br/>Analysis"]
 ```
 
 ---
